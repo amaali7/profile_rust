@@ -67,21 +67,12 @@ pub fn App() -> impl IntoView {
                     </NavBar>
                 </nav>
 
-                <Routes>
-                    <Route
-                        path="/"
-                        view=move || {
-                            view! { <Home/>
+ <Home/>
                                 <Education/>
                                 <Experience/>
                                 <Skills/>
                                 <Info/>
-                            }
-                        }
-                    />
 
-                    <Route path="/*" view=NotFound/>
-                </Routes>
             </main>
         </Router>
     }
