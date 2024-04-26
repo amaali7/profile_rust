@@ -114,7 +114,7 @@ pub fn Home() -> impl IntoView {
                         <span class="span-1">" }"</span>
 
                     </div>
-                    <A href="/info">cargo  run</A>
+                    <A href="#info">cargo  run</A>
                 </div>
             </div>
         </section>

@@ -7,9 +7,9 @@ use leptos::*;
 pub fn Education() -> impl IntoView {
     let (image, set_image) = create_signal(0);
     let images = [
-        "profile_rust/img/uofk-slide1.jpg",
-        "profile_rust/img/uofk-slide2.jpg",
-        "profile_rust/img/uofk-slide3.jpg",
+        "img/uofk-slide1.jpg",
+        "img/uofk-slide2.jpg",
+        "img/uofk-slide3.jpg",
     ];
     create_effect(move |_| {
         set_interval(
@@ -26,7 +26,7 @@ pub fn Education() -> impl IntoView {
     view! {
         <section id="Education" class="page-section education-page">
             <div class="image-section">
-                <img src=move || { images[image.get()] } class="uofk-images" alt="UofK  1"/>
+                <img src=move || { format!("./{}", images[image.get()]) } class="uofk-images" alt="UofK  1"/>
             </div>
             <div class="text-section">
                 <h1>src/lib.rs</h1>

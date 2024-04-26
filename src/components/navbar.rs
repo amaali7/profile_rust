@@ -52,7 +52,7 @@ pub fn NavBarLogo() -> impl IntoView {
         <div class="current-part">
             <div class="nav-logo">
                 <A href="/">
-                    <span class="span-1">"Profile's"</span>
+                    <span class="span-1">"Profile"</span>
                     <span class="span-5">"::"</span>
                     <span class="span-4">"<"</span>
                     <span class="span-1">"Me"</span>

@@ -12,7 +12,6 @@ use crate::pages::education::Education;
 use crate::pages::experience::Experience;
 use crate::pages::home::Home;
 use crate::pages::info::Info;
-use crate::pages::not_found::NotFound;
 use crate::pages::skills::Skills;
 
 /// An app router which renders the homepage and handles 404's
