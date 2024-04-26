@@ -7,9 +7,9 @@ use leptos::*;
 pub fn Education() -> impl IntoView {
     let (image, set_image) = create_signal(0);
     let images = [
-        "img/uofk-slide1.jpg",
-        "img/uofk-slide2.jpg",
-        "img/uofk-slide3.jpg",
+        "profile_rust/img/uofk-slide1.jpg",
+        "profile_rust/img/uofk-slide2.jpg",
+        "profile_rust/img/uofk-slide3.jpg",
     ];
     create_effect(move |_| {
         set_interval(
