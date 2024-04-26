@@ -66,7 +66,7 @@ wasm_bindgen = "0.2.92"
 # Default wasm-opt version to download.
 wasm_opt = "version_116"
 
-[[hooks]]
-stage = "pre_build"
-command = "sh"
-command_arguments = ["-c", "scssfmt --recursive './style/**/*.scss'"]
+# [[hooks]]
+# stage = "pre_build"
+# command = "sh"
+# command_arguments = ["-c", "scssfmt --recursive './style/**/*.scss'"]
