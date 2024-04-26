@@ -1,0 +1,354 @@
+.link {
+  color: $white;
+  @include ScaledHover;
+  padding: 0 16px;
+}
+.nav-logo {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: $orang;
+  font-weight: bolder;
+  padding: 16px 32px;
+  transition: all ease 1s;
+
+  a {
+    text-decoration: none;
+  }
+  @include ScaledHover;
+}
+@include CodeSchema;
+[aria-current="page"] {
+  color: $light-orang;
+}
+$nav-height: 54px;
+$nav-element-pading: 16px 6px;
+.navbar {
+  height: $nav-height;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  background-color: $deep-blue;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  #nav-check {
+    display: none;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .mobo-header {
+    position: absolute;
+    overflow: hidden;
+    height: 0px;
+    top: 0;
+    left: 0;
+  }
+  .nav-link {
+    display: inline;
+    float: right;
+    font-size: 1.1rem;
+    @include ClearFix;
+    width: auto;
+    cursor: pointer;
+    a {
+      width: auto;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all ease 0.5s;
+      padding: $nav-element-pading;
+      color: $orang;
+      &:hover {
+        color: $light-orang;
+      }
+    }
+  }
+}
+
+@include Query(mobile) {
+  .navbar {
+    width: 100%;
+    .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      label {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        padding: 11px;
+        margin: 4px;
+        &:hover {
+          span {
+            border-top: 2px solid $orang;
+          }
+        }
+        span {
+          display: block;
+          width: 25px;
+          height: 10px;
+          border-top: 0.125rem solid $light-gray;
+        }
+      }
+    }
+    .nav-link {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: $deep-blue;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 54px;
+      left: 0;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      a {
+        // padding:24px;
+        padding: 16px 24px;
+        display: block;
+        width: 100%;
+        // height: 30px;
+        &:hover {
+          color: $orang;
+          background-color: $trans-black;
+        }
+      }
+    }
+    #nav-check:checked ~ .nav-btn {
+      label {
+        background-color: $trans-black;
+        span {
+          border-top: 2px solid $orang;
+        }
+      }
+    }
+    .mobo-header {
+      color: $light-gray;
+      display: block;
+      width: 100%;
+      height: auto;
+      letter-spacing: 1px;
+      transition: all ease 1s;
+      padding: 16px 24px;
+      font-size: medium;
+      background-color: $trans-black;
+      height: 100%;
+      &:hover {
+        color: $orang;
+      }
+    }
+  }
+  .navbar > {
+    #nav-check:checked ~ .nav-link {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+    #nav-check:not(checked) ~ .nav-link {
+      height: 0px;
+    }
+  }
+}
+
+@include Query(tablet) {
+  .navbar {
+    width: 100%;
+    .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+
+      label {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        padding: 11px;
+        margin: 4px;
+        &:hover {
+          span {
+            border-top: 2px solid $orang;
+          }
+        }
+        span {
+          display: block;
+          width: 25px;
+          height: 10px;
+          border-top: 2px solid $light-gray;
+        }
+      }
+    }
+    .nav-link {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: $deep-blue;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      top: 54px;
+      left: 0;
+      a {
+        padding: 16px 24px;
+        display: block;
+        width: 100%;
+        &:hover {
+          color: $orang;
+          background-color: $trans-black;
+        }
+      }
+    }
+    #nav-check:checked ~ .nav-btn {
+      label {
+        background-color: $trans-black;
+        span {
+          border-top: 2px solid $orang;
+        }
+      }
+    }
+    .mobo-header {
+      color: $light-gray;
+      display: block;
+      width: 100%;
+      height: auto;
+      letter-spacing: 1px;
+      transition: all ease 1s;
+      padding: 16px 24px;
+      font-size: medium;
+      border-left: 4px solid $orang;
+
+      background-color: $trans-black;
+      height: 100%;
+      &:hover {
+        color: $orang;
+      }
+    }
+  }
+  .navbar > {
+    #nav-check:checked ~ .nav-link {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+    #nav-check:not(checked) ~ .nav-link {
+      height: 0px;
+    }
+  }
+}
+
+@include Query(smallScreen) {
+  .navbar {
+    width: 100%;
+    .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+
+      label {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        padding: 11px;
+        margin: 4px;
+        &:hover {
+          span {
+            border-top: 2px solid $orang;
+          }
+        }
+        span {
+          display: block;
+          width: 25px;
+          height: 10px;
+          border-top: 2px solid $light-gray;
+        }
+      }
+    }
+    .nav-link {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: $deep-blue;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      top: 54px;
+      left: 0;
+      a {
+        padding: 16px 24px;
+        display: block;
+        width: 100%;
+        &:hover {
+          color: $orang;
+          background-color: $trans-black;
+        }
+      }
+    }
+    #nav-check:checked ~ .nav-btn {
+      label {
+        background-color: $trans-black;
+        span {
+          border-top: 2px solid $orang;
+        }
+      }
+    }
+    .mobo-header {
+      color: $light-gray;
+      display: block;
+      width: 100%;
+      height: auto;
+      letter-spacing: 1px;
+      transition: all ease 1s;
+      padding: 16px 24px;
+      font-size: medium;
+      border-left: 4px solid $orang;
+
+      background-color: $trans-black;
+      height: 100%;
+      &:hover {
+        color: $orang;
+      }
+    }
+  }
+  .navbar > {
+    #nav-check:checked ~ .nav-link {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+    #nav-check:not(checked) ~ .nav-link {
+      height: 0px;
+    }
+  }
+}
+@include Query(largScreen) {
+  .nav-link {
+    .navbar {
+      .a {
+        font-size: 1.3rem;
+      }
+    }
+    .nav-logo {
+      font-size: 1.5rem;
+    }
+  }
+}
+@include Query(extraLarg) {
+  .nav-link {
+    .navbar {
+      .a {
+        font-size: 1.5rem;
+      }
+    }
+    .nav-logo {
+      font-size: 1.7rem;
+    }
+  }
+}

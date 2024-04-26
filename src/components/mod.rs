@@ -1,2 +1,2 @@
-pub mod counter_btn;
+pub mod model;
 pub mod navbar;

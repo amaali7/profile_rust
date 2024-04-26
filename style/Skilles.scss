@@ -1,0 +1,95 @@
+@include RoundedHeader;
+@include Typography;
+
+.skills-page {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+  .rounded-header {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  .conta {
+    width: 90% / 3;
+  }
+  .skill {
+    border-bottom: 2px solid $orang;
+    // border-radius: 5rem;
+    text-align: center;
+    padding: 1rem;
+    color: $orang;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: all ease 0.7s;
+    margin: 10px 0;
+    width: (100%);
+    transition: all ease 1s;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $orang;
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: bolder;
+    }
+  }
+}
+
+@include Query(mobile) {
+  .skills-page {
+    .conta {
+      width: (90%);
+    }
+  }
+}
+
+@include Query(tablet) {
+  .skills-page {
+    .skill {
+      font-size: 1.2rem;
+      width: 100%;
+    }
+    .conta {
+      width: 60vw;
+    }
+  }
+}
+
+@include Query(smallScreen) {
+  .skills-page {
+    .skill {
+      font-size: 1.4rem;
+      width: 100%;
+    }
+    .conta {
+      width: 40vw;
+    }
+  }
+}
+
+@include Query(largScreen) {
+  .skills-page {
+    .skill {
+      font-size: 1.6rem;
+      width: 100%;
+    }
+    .conta {
+      width: 30vw;
+    }
+  }
+}
+
+@include Query(extraLarg) {
+  .skills-page {
+    .skill {
+      font-size: 1.8rem;
+      width: 100%;
+    }
+    .conta {
+      width: 20vw;
+    }
+  }
+}

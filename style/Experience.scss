@@ -1,0 +1,164 @@
+@include RoundedHeader;
+.video {
+  color: #f08f53;
+  background-color: inherit;
+  // width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  padding: 10px 25px;
+  border: 1px solid $orang;
+  /* border-radius: 10px; */
+  font-size: large;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  &:hover {
+    background-color: #f08f53;
+    color: white;
+  }
+}
+.linko {
+  margin: auto;
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 300;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.experience-page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-content: space-between;
+    gap: 14px;
+    width: 100%;
+    @include Card;
+  }
+}
+
+@include Query(mobile) {
+  .experience-page {
+    .container {
+      gap: 60px;
+
+      flex-direction: column;
+      .card {
+        width: 100%;
+        height: auto;
+        padding-bottom: 20px;
+        padding-top: 10px;
+      }
+      .mas {
+        padding-top: 30px;
+      }
+    }
+  }
+}
+
+
+@include Query(tablet) {
+  .experience-page {
+    .container {
+      flex-direction: column;
+
+      .card {
+        width: 100%;
+        height: auto;
+        padding-bottom: 20px;
+        padding-top: -10px;
+      }
+      .mas {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+@include Query(smallScreen) {
+  .experience-page {
+    .container {
+      .card {
+        .main-box {
+          .header {
+            font-size: 1.3rem;
+          }
+          .body {
+            font-size: 1.2rem;
+          }
+        }
+        .top-box {
+          h1 {
+            font-size: 1.5rem;
+            font-weight: 300;
+          }
+        }
+      }
+      @include ScaledHover;
+    }
+  }
+}
+@include Query(largScreen) {
+  .experience-page {
+    .container {
+      .card {
+        .main-box {
+          .header {
+            font-size: 1.3rem;
+          }
+          .body {
+            font-size: 1.2rem;
+          }
+        }
+        .top-box {
+          h1 {
+            font-size: 1.5rem;
+            font-weight: 300;
+          }
+        }
+      }
+      @include ScaledHover;
+    }
+  }
+}
+@include Query(extraLarg) {
+  .experience-page {
+    .container {
+      .card {
+        .main-box {
+          .header {
+            font-size: 1.6rem;
+          }
+          .body {
+            font-size: 1.5rem;
+          }
+        }
+        .top-box {
+          h1 {
+            font-size: 1.8rem;
+            font-weight: 300;
+          }
+        }
+      }
+      @include ScaledHover;
+    }
+  }
+}

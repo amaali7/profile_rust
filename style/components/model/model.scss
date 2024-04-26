@@ -1,0 +1,35 @@
+.model-container {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  //   transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  @include Card;
+  .card {
+    width: clamp(60%, 50%, 98%);
+    margin-top: auto;
+    padding: 4px;
+    height: auto;
+    z-index: 1001;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &:hover {
+      scale: 1;
+    }
+    .main-box {
+      margin: 0;
+      width: 100%;
+      iframe {
+        border: none;
+        border-radius: 10px;
+        // width: 100%;
+        // height: calc(100vw * 0.35);
+      }
+    }
+  }
+}

@@ -1,30 +1,65 @@
 use leptos::*;
+use leptos_router::A;
 
 /// A parameterized navbar
 #[component]
-pub fn NavBar() -> impl IntoView {
+pub fn NavBar<F, IV>(children: Children, logo: F, check: RwSignal<bool>) -> impl IntoView
+where
+    F: Fn() -> IV,
+    IV: IntoView,
+{
     view! {
-        <NavBarLogo/>
-        <NavBarItem text=".home()".to_owned() link="/".to_owned()/>
-        <NavBarItem text=".education()".to_owned() link="/education".to_owned()/>
-        <NavBarItem text=".experience()".to_owned() link="/experience".to_owned()/>
-        <NavBarItem text=".skills()".to_owned() link="/skills".to_owned()/>
-        <NavBarItem text=".info()".to_owned() link="/info".to_owned()/>
+        {logo()}
+        <NavBarBotton check=check/>
+        <div class="nav-link">{children()}</div>
+    }
+}
+
+/// A parameterized navbar botton
+#[component]
+pub fn NavBarBotton(check: RwSignal<bool>) -> impl IntoView {
+    view! {
+        <input type="checkbox" id="nav-check" prop:checked=check/>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
     }
 }
 
 /// A parameterized navbar item
 #[component]
-pub fn NavBarItem(text: String, link: String) -> impl IntoView {
+pub fn NavBarItem(text: String, link: String, check: RwSignal<bool>) -> impl IntoView {
     view! {
-        <a href=link>{text}</a>
+        <A
+            href=link.clone()
+            exact=true
+            on:click=move |_| { check.update(|value| { *value = !(*value) }) }
+        >
+            {text}
+        </A>
     }
 }
 
 /// A parameterized navbar item
 #[component]
 pub fn NavBarLogo() -> impl IntoView {
+    // let check = store_value(false);
     view! {
-       <h1>"Profile::<Me>()"</h1>
+        <div class="current-part">
+            <div class="nav-logo">
+                <A href="/">
+                    <span class="span-1">"Profile's"</span>
+                    <span class="span-5">"::"</span>
+                    <span class="span-4">"<"</span>
+                    <span class="span-1">"Me"</span>
+                    <span class="span-4">">"</span>
+                    <span class="span-1">"()"</span>
+                </A>
+            </div>
+        </div>
     }
 }

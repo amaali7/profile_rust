@@ -1,52 +1,46 @@
 use leptos::*;
 
-use crate::components::counter_btn::Button;
 /// Default Home Page
 #[component]
 pub fn Skills() -> impl IntoView {
     view! {
-        <ErrorBoundary fallback=|errors| {
-            view! {
-                <h1>"Uh oh! Something went wrong!"</h1>
-
-                <p>"Errors: "</p>
-                // Render a list of errors as strings - good for development purposes
-                <ul>
-                    {move || {
-                        errors
-                            .get()
-                            .into_iter()
-                            .map(|(_, e)| view! { <li>{e.to_string()}</li> })
-                            .collect_view()
-                    }}
-
-                </ul>
-            }
-        }>
-
-            <div class="container">
-
-                <picture>
-                    <source
-                        srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_pref_dark_RGB.svg"
-                        media="(prefers-color-scheme: dark)"
-                    />
-                    <img
-                        src="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg"
-                        alt="Leptos Logo"
-                        height="200"
-                        width="400"
-                    />
-                </picture>
-
-                <h1>"Skills"</h1>
-
-                <div class="buttons">
-                    <Button/>
-                    <Button increment=5/>
-                </div>
-
+        <section id="Skills" class="page-section skills-page">
+            <div class="conta">
+                <h1 class="rounded-header">Programing</h1>
+                <h6 class="skill">Rust</h6>
+                <h6 class="skill">C Language</h6>
+                <h6 class="skill">Nix/NixOS</h6>
+                <h6 class="skill">Python</h6>
+                <h6 class="skill">Sass</h6>
+                <h6 class="skill">Bash Script</h6>
+                <h6 class="skill">HTML</h6>
+                <h6 class="skill">Tex</h6>
             </div>
-        </ErrorBoundary>
+            <div class="conta">
+                <h1 class="rounded-header">Framworks & Libs</h1>
+                <h6 class="skill">Embedded Rust</h6>
+                <h6 class="skill">"Aya Rust (ebpf)"</h6>
+                <h6 class="skill">Actix</h6>
+                <h6 class="skill">Leptos</h6>
+                <h6 class="skill">Tokio</h6>
+                <h6 class="skill">Leptonic</h6>
+                <h6 class="skill">Arduino/ESP32</h6>
+            </div>
+            <div class="conta">
+                <h1 class="rounded-header">Soft Skills</h1>
+                <h6 class="skill">Communication</h6>
+                <h6 class="skill">Integrity</h6>
+                <h6 class="skill">Teamwork & Collaboration</h6>
+                <h6 class="skill">Problem Solving</h6>
+                <h6 class="skill">Initiative</h6>
+                <h6 class="skill">Commitment</h6>
+                <h6 class="skill">Time Management</h6>
+            </div>
+            <div class="conta">
+                <h1 class="rounded-header">Languages</h1>
+                <h6 class="skill">Arabic (Mother Tongue)</h6>
+                <h6 class="skill">English</h6>
+            </div>
+        </section>
     }
 }

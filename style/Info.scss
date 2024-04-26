@@ -1,0 +1,115 @@
+@include RoundedHeader;
+@include Typography;
+.info-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: space-around;
+  flex-wrap: wrap;
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    transition: all ease 0.7s;
+
+    .card {
+      position: relative;
+      margin-top: 60px;
+      margin-left: 32px;
+      margin-right: 32px;
+      height: auto;
+      width: clamp(95vw, 60%, 48%);
+      min-height: 250px;
+      padding: 30px;
+      padding-top: 60px;
+      border: 1px solid $orang;
+      /* border-radius: 16px; */
+      transition: all ease 1s;
+      background-color: $deep-blue;
+      z-index: 5;
+      .top-box {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        width: 80%;
+        border: 1px solid $orang;
+        z-index: 6;
+        background-color: inherit;
+        /* border-radius: 16px; */
+
+        h1 {
+          padding: 8px 14px;
+          color: $orang;
+          float: left;
+          font-size: 1.5rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          width: 100%;
+          display: block;
+          text-align: center;
+        }
+      }
+      @include ScaledHover;
+    }
+
+    .el {
+      font-size: 1rem;
+      margin: 8px 0;
+      text-decoration: none;
+      a {
+        text-decoration: none;
+        span {
+          color: $white;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    .contact-links {
+      transition: all ease 1s;
+      margin: 2rem auto;
+      .contact-link {
+        border-bottom: 2px solid $orang;
+        padding: 0.875rem 0.45rem;
+        text-decoration: wavy;
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: $orang;
+        transition: all ease 0.7s;
+        &:hover {
+          background-color: $orang;
+          color: $white;
+        }
+      }
+      @include ScaledHover;
+    }
+    .contact-element {
+      // display: block;
+
+      transition: all ease 1s;
+
+      width: auto;
+      margin: 0 auto;
+      .element {
+        .el {
+          margin: 8px 0;
+          text-decoration: none;
+          span {
+            color: $white;
+          }
+        }
+      }
+      @include ScaledHover(1.2);
+    }
+  }
+}

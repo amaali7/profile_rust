@@ -13,6 +13,8 @@ leptos_router = { version = "0.6", features = ["csr", "nightly"] }
 console_log = "1"
 log = "0.4"
 console_error_panic_hook = "0.1"
+stylance = "0.3.0"
+
 
 # utils
 # strum = { version = "0.25", features = ["derive", "strum_macros"] }
@@ -25,8 +27,3 @@ wasm-bindgen-test = "0.3"
 web-sys = { version = "0.3", features = ["Document", "Window"] }
 
 
-[profile.release]
-opt-level = 'z'
-lto = true
-codegen-units = 1
-panic = "abort"

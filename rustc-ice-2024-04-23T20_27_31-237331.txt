@@ -1,0 +1,186 @@
+thread 'rustc' panicked at compiler/rustc_errors/src/diagnostic_builder.rs:117:9:
+invalid diagnostic level (Warning)
+stack backtrace:
+   0:     0x7fc7ac166f9f - std::backtrace_rs::backtrace::libunwind::trace::h1eedb42239d9af6b
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/../../backtrace/src/backtrace/libunwind.rs:104:5
+   1:     0x7fc7ac166f9f - std::backtrace_rs::backtrace::trace_unsynchronized::h9496ef5912beabf9
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5
+   2:     0x7fc7ac166f9f - std::backtrace::Backtrace::create::hc6af562e4790553b
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/backtrace.rs:331:13
+   3:     0x7fc7ac166ee0 - std::backtrace::Backtrace::force_capture::hd82dce45b76df832
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/backtrace.rs:312:9
+   4:     0x7fc7a8e1af08 - std[38a2ac7f7aa65357]::panicking::update_hook::<alloc[250c3b7c6f6c60ed]::boxed::Box<rustc_driver_impl[98bdfcf9c8fb7ba2]::install_ice_hook::{closure#0}>>::{closure#0}
+   5:     0x7fc7ac181d50 - <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call::h0f1d4fd9cb21869d
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/alloc/src/boxed.rs:2030:9
+   6:     0x7fc7ac181d50 - std::panicking::rust_panic_with_hook::h55549baaf7aa2e9c
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/panicking.rs:786:13
+   7:     0x7fc7ac181a92 - std::panicking::begin_panic_handler::{{closure}}::ha0f2b022514542bd
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/panicking.rs:660:13
+   8:     0x7fc7ac17efd6 - std::sys_common::backtrace::__rust_end_short_backtrace::h710104fb518da581
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/sys_common/backtrace.rs:171:18
+   9:     0x7fc7ac1817c4 - rust_begin_unwind
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/panicking.rs:648:5
+  10:     0x7fc7ac1cbf95 - core::panicking::panic_fmt::h98f81ca1314e2b14
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/core/src/panicking.rs:72:14
+  11:     0x7fc7ab0ee592 - <rustc_span[39701832932d6f53]::ErrorGuaranteed as rustc_errors[31b00c9a61d6a627]::diagnostic_builder::EmissionGuarantee>::emit_producing_guarantee
+  12:     0x7fc7aa50b2a4 - <proc_macro[478832a3ff351ddb]::bridge::server::Dispatcher<proc_macro[478832a3ff351ddb]::bridge::server::MarkedTypes<rustc_expand[728fe096a2e7dc0]::proc_macro_server::Rustc>> as proc_macro[478832a3ff351ddb]::bridge::server::DispatcherTrait>::dispatch
+  13:     0x7fc7aa508376 - <proc_macro[478832a3ff351ddb]::bridge::closure::Closure<_, _> as core[9082f35584c4c405]::convert::From<&mut _>>::from::call::<proc_macro[478832a3ff351ddb]::bridge::buffer::Buffer, proc_macro[478832a3ff351ddb]::bridge::buffer::Buffer, <proc_macro[478832a3ff351ddb]::bridge::server::SameThread as proc_macro[478832a3ff351ddb]::bridge::server::ExecutionStrategy>::run_bridge_and_client<proc_macro[478832a3ff351ddb]::bridge::server::Dispatcher<proc_macro[478832a3ff351ddb]::bridge::server::MarkedTypes<rustc_expand[728fe096a2e7dc0]::proc_macro_server::Rustc>>>::{closure#0}>
+  14:     0x7fc7897bba7f - proc_macro::bridge::closure::Closure<A,R>::call::h98a90dd4c3bd18d9
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/bridge/closure.rs:30:18
+  15:     0x7fc7897bba7f - proc_macro::bridge::client::FreeFunctions::emit_diagnostic::{{closure}}::h02a3b7ffb0337edf
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/bridge/client.rs:238:43
+  16:     0x7fc7897bba7f - proc_macro::bridge::client::Bridge::with::{{closure}}::h4a7782b669169a4e
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/bridge/client.rs:312:47
+  17:     0x7fc7897bba7f - proc_macro::bridge::scoped_cell::ScopedCell<T>::replace::h71fa0068b5643e5f
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/bridge/scoped_cell.rs:56:9
+  18:     0x7fc7897bba7f - proc_macro::bridge::client::BridgeState::with::{{closure}}::ha67dc0569336188c
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/bridge/client.rs:299:35
+  19:     0x7fc7897bba7f - std::thread::local::LocalKey<T>::try_with::hf59b7c62c02da428
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/thread/local.rs:286:16
+  20:     0x7fc7897bba7f - std::thread::local::LocalKey<T>::with::h4a285a6948869979
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/thread/local.rs:262:9
+  21:     0x7fc7897bba7f - proc_macro::bridge::client::BridgeState::with::h7efcfe9838a80494
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/bridge/client.rs:299:22
+  22:     0x7fc7897bba7f - proc_macro::bridge::client::Bridge::with::h1aa91c3ee1cfd06f
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/bridge/client.rs:305:9
+  23:     0x7fc7897bba7f - proc_macro::bridge::client::FreeFunctions::emit_diagnostic::h1e0a8325d6884b21
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/bridge/client.rs:231:17
+  24:     0x7fc7897bba7f - proc_macro::diagnostic::Diagnostic::emit::h4d32195130f72312
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/proc_macro/src/diagnostic.rs:173:9
+  25:     0x7fc789770969 - proc_macro_error::imp::emit_diagnostic::h14b6bcb5f4d4f983
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-1.0.4/src/imp/delegate.rs:64:5
+  26:     0x7fc78976f6ee - proc_macro_error::diagnostic::Diagnostic::emit::hfc029d84f887ef75
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-1.0.4/src/diagnostic.rs:192:9
+  27:     0x7fc7895296cb - leptos_macro::view::ide_helper::IdeTagHelper::save_tag_completion::hcd31fb9fd32b31de
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/ide_helper.rs:28:13
+  28:     0x7fc7894fd5ec - leptos_macro::view::client_builder::element_to_tokens::h3ba005b5114de823
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:215:13
+  29:     0x7fc7894ffc03 - leptos_macro::view::client_builder::element_to_tokens::{{closure}}::h41eac2824ca40857
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:320:40
+  30:     0x7fc7894f81af - core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &mut F>::call_once::h732fb74f1bd4f803
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:305:13
+  31:     0x7fc789504fed - core::option::Option<T>::map::h24474f9fadef6ce3
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:1072:29
+  32:     0x7fc789504fed - <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::next::h6c02ad9bcb1d30ea
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/map.rs:108:26
+  33:     0x7fc789504048 - <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::next::h13aef8d9fc02087c
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/map.rs:108:9
+  34:     0x7fc7894fe880 - leptos_macro::view::client_builder::element_to_tokens::h3ba005b5114de823
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:338:14
+  35:     0x7fc7894fbc48 - leptos_macro::view::client_builder::node_to_tokens::h8f14840b487c8313
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:148:32
+  36:     0x7fc7894fb36e - leptos_macro::view::client_builder::fragment_to_tokens::{{closure}}::h41480e82fe25214c
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:47:24
+  37:     0x7fc7894f8092 - core::ops::function::impls::<impl core::ops::function::FnMut<A> for &mut F>::call_mut::h27b1ee3c990181c9
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:294:13
+  38:     0x7fc78948dcd0 - <core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::find_map::hea68ec250b873a74
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:319:38
+  39:     0x7fc78950e3cd - <core::iter::adapters::filter_map::FilterMap<I,F> as core::iter::traits::iterator::Iterator>::next::h6669bb3e3225b638
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/filter_map.rs:63:9
+  40:     0x7fc7895114f6 - core::iter::adapters::peekable::Peekable<I>::peek::{{closure}}::h436597e116f8122a
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/peekable.rs:217:43
+  41:     0x7fc78952e605 - core::option::Option<T>::get_or_insert_with::haf8afc16ce21d56f
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs:1663:26
+  42:     0x7fc78951148b - core::iter::adapters::peekable::Peekable<I>::peek::h0a3e9b0975f50ded
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/peekable.rs:217:9
+  43:     0x7fc7894f96dc - leptos_macro::view::client_builder::fragment_to_tokens::h377a1a3a3d8452be
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:65:8
+  44:     0x7fc7895137ba - leptos_macro::view::component_builder::component_to_tokens::h364651e0d43e9a23
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/component_builder.rs:125:24
+  45:     0x7fc7894fec5f - leptos_macro::view::client_builder::element_to_tokens::h3ba005b5114de823
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:171:18
+  46:     0x7fc7894fbc48 - leptos_macro::view::client_builder::node_to_tokens::h8f14840b487c8313
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:148:32
+  47:     0x7fc7894fb36e - leptos_macro::view::client_builder::fragment_to_tokens::{{closure}}::h41480e82fe25214c
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:47:24
+  48:     0x7fc7894f8092 - core::ops::function::impls::<impl core::ops::function::FnMut<A> for &mut F>::call_mut::h27b1ee3c990181c9
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:294:13
+  49:     0x7fc78948dcd0 - <core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::find_map::hea68ec250b873a74
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/iter/macros.rs:319:38
+  50:     0x7fc78950e3cd - <core::iter::adapters::filter_map::FilterMap<I,F> as core::iter::traits::iterator::Iterator>::next::h6669bb3e3225b638
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/filter_map.rs:63:9
+  51:     0x7fc78950dfc9 - <core::iter::adapters::peekable::Peekable<I> as core::iter::traits::iterator::Iterator>::next::h4768424a719baaf2
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/iter/adapters/peekable.rs:40:21
+  52:     0x7fc7894fa9be - leptos_macro::view::client_builder::fragment_to_tokens::h377a1a3a3d8452be
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/client_builder.rs:85:9
+  53:     0x7fc7894d9359 - leptos_macro::view::render_view::he1bcf34ae34ca5ba
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/view/mod.rs:57:18
+  54:     0x7fc7894eccd4 - leptos_macro::view::{{closure}}::h977e09b4b6c40c41
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/lib.rs:364:24
+  55:     0x7fc7894d1baa - <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once::h7b2b66615970c94f
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+  56:     0x7fc78952c3c7 - std::panicking::try::do_call::h859374c259f7037f
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:555:40
+  57:     0x7fc78953702b - __rust_try
+  58:     0x7fc78952bf2f - std::panicking::try::hacb63acfc2c9c676
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:519:19
+  59:     0x7fc7894b01e5 - std::panic::catch_unwind::h3298a8ea6f478125
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:142:14
+  60:     0x7fc7894f2639 - proc_macro_error::entry_point::ha23d2a32e7e3a878
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-1.0.4/src/lib.rs:432:18
+  61:     0x7fc7894ec0a1 - leptos_macro::view::h43eafb168be84717
+                               at /home/ai3wm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/leptos_macro-0.6.11/src/lib.rs:319:1
+  62:     0x7fc7894ca266 - core::ops::function::Fn::call::h7a09b38e6446c1e1
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:79:5
+  63:     0x7fc7894937ca - proc_macro::bridge::client::Client<proc_macro::TokenStream,proc_macro::TokenStream>::expand1::{{closure}}::{{closure}}::h30bbf727b5453e38
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/client.rs:431:44
+  64:     0x7fc7894922ef - proc_macro::bridge::client::run_client::{{closure}}::{{closure}}::{{closure}}::h7b9f0a2e5ddddfd0
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/client.rs:395:30
+  65:     0x7fc7894c43dd - proc_macro::bridge::scoped_cell::ScopedCell<T>::set::{{closure}}::he9d9fb425a50deb9
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/scoped_cell.rs:61:33
+  66:     0x7fc7894c5ab7 - proc_macro::bridge::scoped_cell::ScopedCell<T>::replace::h7331e92a4bb10f2d
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/scoped_cell.rs:56:9
+  67:     0x7fc789491c02 - proc_macro::bridge::scoped_cell::ScopedCell<T>::set::h2a111a08df999c2d
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/scoped_cell.rs:61:9
+  68:     0x7fc789491c02 - proc_macro::bridge::client::run_client::{{closure}}::{{closure}}::h61178cfb38a10f4f
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/client.rs:394:19
+  69:     0x7fc7894ca0af - std::thread::local::LocalKey<T>::try_with::hfe02e516f062f8a1
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:286:16
+  70:     0x7fc78948fbc9 - std::thread::local::LocalKey<T>::with::hd5e8ab9766472225
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:262:9
+  71:     0x7fc78948fbc9 - proc_macro::bridge::client::run_client::{{closure}}::h1458ab046441763e
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/client.rs:393:22
+  72:     0x7fc7894d1cb0 - <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once::he3a6ef14aec26c65
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+  73:     0x7fc78952c4c4 - std::panicking::try::do_call::hd23703b03c3ac3d4
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:555:40
+  74:     0x7fc78953702b - __rust_try
+  75:     0x7fc78952bd5f - std::panicking::try::h7f8384689ff2e9ec
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:519:19
+  76:     0x7fc78948f323 - std::panic::catch_unwind::hba2f5427948afeac
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:142:14
+  77:     0x7fc78948f323 - proc_macro::bridge::client::run_client::he6920add381416cd
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/client.rs:380:5
+  78:     0x7fc7894936cd - proc_macro::bridge::client::Client<proc_macro::TokenStream,proc_macro::TokenStream>::expand1::{{closure}}::h00e35aaad0aa7414
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/client.rs:431:17
+  79:     0x7fc78951f686 - proc_macro::bridge::selfless_reify::reify_to_extern_c_fn_hrt_bridge::wrapper::h234ff3d7a9f3a5d3
+                               at /home/ai3wm/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro/src/bridge/selfless_reify.rs:64:17
+  80:     0x7fc7aa8f976b - <proc_macro[478832a3ff351ddb]::bridge::server::MaybeCrossThread<rustc_expand[728fe096a2e7dc0]::proc_macro::MessagePipe<proc_macro[478832a3ff351ddb]::bridge::buffer::Buffer>> as proc_macro[478832a3ff351ddb]::bridge::server::ExecutionStrategy>::run_bridge_and_client::<proc_macro[478832a3ff351ddb]::bridge::server::Dispatcher<proc_macro[478832a3ff351ddb]::bridge::server::MarkedTypes<rustc_expand[728fe096a2e7dc0]::proc_macro_server::Rustc>>>
+  81:     0x7fc7aa8f9f18 - <proc_macro[478832a3ff351ddb]::bridge::client::Client<proc_macro[478832a3ff351ddb]::TokenStream, proc_macro[478832a3ff351ddb]::TokenStream>>::run::<rustc_expand[728fe096a2e7dc0]::proc_macro_server::Rustc, proc_macro[478832a3ff351ddb]::bridge::server::MaybeCrossThread<rustc_expand[728fe096a2e7dc0]::proc_macro::MessagePipe<proc_macro[478832a3ff351ddb]::bridge::buffer::Buffer>>>
+  82:     0x7fc7ab0c1fa0 - <rustc_expand[728fe096a2e7dc0]::proc_macro::BangProcMacro as rustc_expand[728fe096a2e7dc0]::base::BangProcMacro>::expand
+  83:     0x7fc7aaadb01a - <rustc_expand[728fe096a2e7dc0]::expand::MacroExpander>::fully_expand_fragment
+  84:     0x7fc7aaad9bb7 - <rustc_expand[728fe096a2e7dc0]::expand::MacroExpander>::expand_crate
+  85:     0x7fc7aafb0d92 - rustc_interface[d43ea88de449c898]::passes::resolver_for_lowering
+  86:     0x7fc7aafb0267 - rustc_query_impl[72e671e77ccdc0fd]::plumbing::__rust_begin_short_backtrace::<rustc_query_impl[72e671e77ccdc0fd]::query_impl::resolver_for_lowering::dynamic_query::{closure#2}::{closure#0}, rustc_middle[cfb3c689534e2244]::query::erase::Erased<[u8; 8usize]>>
+  87:     0x7fc7aacca9e6 - rustc_query_system[eb6d0acd22a0ff82]::query::plumbing::try_execute_query::<rustc_query_impl[72e671e77ccdc0fd]::DynamicConfig<rustc_query_system[eb6d0acd22a0ff82]::query::caches::SingleCache<rustc_middle[cfb3c689534e2244]::query::erase::Erased<[u8; 8usize]>>, false, false, false>, rustc_query_impl[72e671e77ccdc0fd]::plumbing::QueryCtxt, true>
+  88:     0x7fc7aacca137 - rustc_query_impl[72e671e77ccdc0fd]::query_impl::resolver_for_lowering::get_query_incr::__rust_end_short_backtrace
+  89:     0x7fc7aad64697 - rustc_interface[d43ea88de449c898]::interface::run_compiler::<core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>, rustc_driver_impl[98bdfcf9c8fb7ba2]::run_compiler::{closure#0}>::{closure#0}
+  90:     0x7fc7aafc1c05 - std[38a2ac7f7aa65357]::sys_common::backtrace::__rust_begin_short_backtrace::<rustc_interface[d43ea88de449c898]::util::run_in_thread_with_globals<rustc_interface[d43ea88de449c898]::util::run_in_thread_pool_with_globals<rustc_interface[d43ea88de449c898]::interface::run_compiler<core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>, rustc_driver_impl[98bdfcf9c8fb7ba2]::run_compiler::{closure#0}>::{closure#0}, core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>>::{closure#0}, core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>>::{closure#0}::{closure#0}, core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>>
+  91:     0x7fc7aafc1a32 - <<std[38a2ac7f7aa65357]::thread::Builder>::spawn_unchecked_<rustc_interface[d43ea88de449c898]::util::run_in_thread_with_globals<rustc_interface[d43ea88de449c898]::util::run_in_thread_pool_with_globals<rustc_interface[d43ea88de449c898]::interface::run_compiler<core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>, rustc_driver_impl[98bdfcf9c8fb7ba2]::run_compiler::{closure#0}>::{closure#0}, core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>>::{closure#0}, core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>>::{closure#0}::{closure#0}, core[9082f35584c4c405]::result::Result<(), rustc_span[39701832932d6f53]::ErrorGuaranteed>>::{closure#1} as core[9082f35584c4c405]::ops::function::FnOnce<()>>::call_once::{shim:vtable#0}
+  92:     0x7fc7ac18b725 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h8e2928e2096a726d
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/alloc/src/boxed.rs:2016:9
+  93:     0x7fc7ac18b725 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h4f25e5317edfd617
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/alloc/src/boxed.rs:2016:9
+  94:     0x7fc7ac18b725 - std::sys::pal::unix::thread::Thread::new::thread_start::hc7193b55f6b48c9a
+                               at /rustc/bb594538fc6e84213a6b8d5e165442570aa48923/library/std/src/sys/pal/unix/thread.rs:108:17
+  95:     0x7fc7a5ea3084 - start_thread
+  96:     0x7fc7a5f2560c - __GI___clone3
+  97:                0x0 - <unknown>
+
+
+rustc version: 1.78.0-nightly (bb594538f 2024-02-20)
+platform: x86_64-unknown-linux-gnu
+
+query stack during panic:
+#0 [resolver_for_lowering] getting the resolver for lowering
+end of query stack

@@ -1,0 +1,131 @@
+.education-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 56px);
+  .image-section {
+    transition: all ease 1s;
+    width: 45%;
+    .uofk-images {
+      transition: all ease 2s;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      place-self: center;
+      padding: 6px;
+      border: 2px solid $trans-orang;
+      /* border-radius: 1rem; */
+    }
+    @include ScaledHover(1.1);
+  }
+
+  .text-section {
+    width: 40%;
+
+    transition: all ease 1s;
+    border: 0.5px solid $orang;
+    /* border-radius: 16px; */
+    h1 {
+      color: $orang;
+      text-align: center;
+      border-bottom: 0.5px solid $orang;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 16px 0;
+      margin-bottom: 16px;
+    }
+    @include CodeSchema;
+    .text {
+      width: 100%;
+      height: auto;
+      display: block;
+      justify-self: center;
+      color: $white;
+      font-size: 1.4rem;
+
+      padding: 32px;
+    }
+    @include ScaledHover(1.1);
+  }
+}
+@include Query(mobile) {
+  .education-page {
+    flex-direction: column-reverse;
+    gap: 5vh;
+    justify-content: center;
+    .image-section {
+      justify-content: center;
+      width: 90%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .text-section {
+      width: 85vw;
+      justify-content: center;
+      .text {
+        font-size: 3vw;
+      }
+    }
+  }
+}
+@include Query(tablet) {
+  .education-page {
+    flex-direction: column-reverse;
+    gap: 5vh;
+    justify-content: center;
+    .image-section {
+      justify-content: center;
+      width: 80%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .text-section {
+      width: 80%;
+      justify-content: center;
+      .text {
+        font-size: 3vw;
+      }
+    }
+  }
+}
+@include Query(smallScreen) {
+  .education-page {
+    flex-direction: column-reverse;
+    gap: 5vh;
+    justify-content: center;
+    .image-section {
+      justify-content: center;
+      width: 80%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .text-section {
+      width: 80%;
+      justify-content: center;
+      .text {
+        font-size: 3vw;
+      }
+    }
+  }
+}
+@include Query(largScreen) {
+  .education-page {
+    font-size: 1.5rem;
+  }
+}
+@include Query(extraLarg) {
+  .education-page {
+    font-size: 2rem;
+  }
+}
