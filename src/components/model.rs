@@ -13,6 +13,7 @@ pub fn Model(children: Children, #[prop(into)] close_model: RwSignal<bool>) -> i
                 })
         }
       >
+
         <div class="card">{children()}</div>
       </div>
     }

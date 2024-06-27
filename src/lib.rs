@@ -25,7 +25,7 @@ pub fn App() -> impl IntoView {
         <Html lang="en" dir="ltr" attr:data-theme="light"/>
 
         // sets the document title
-        <Title text="Welcome to Leptos CSR"/>
+        <Title text="Abdallah Ali Profile"/>
 
         // injects metadata in the <head> of the page
         <Meta charset="UTF-8"/>
@@ -66,18 +66,13 @@ pub fn App() -> impl IntoView {
                     </NavBar>
                 </nav>
 
- <Home/>
-                                <Education/>
-                                <Experience/>
-                                <Skills/>
-                                <Info/>
+                <Home/>
+                <Education/>
+                <Experience/>
+                <Skills/>
+                <Info/>
 
             </main>
         </Router>
     }
-    // <Route path="/info" view=Info/>
-    //           <Route path="/skills" view=Skills/>
-
-    //           <Route path="/experience" view=Experience/>
-    //           <Route path="/education" view=Education/>
 }
