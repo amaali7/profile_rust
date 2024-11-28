@@ -7,19 +7,20 @@ pub fn Home() -> impl IntoView {
     view! {
       <section id="Home" class="page-section home-page">
         <div class="images-container">
-          <div class="images">
-            <div class="wheel">
-              <img src="img/Bash.png" alt="Bash"/>
-              <img src="img/Tex.png" alt="Tex"/>
-              <img src="img/nix.png" alt="Nix"/>
-              <img src="img/leptos.png" alt="Leptos"/>
-              <img src="img/aya.svg" alt="Aya rs"/>
-              <img src="img/C.png" alt="C Lang"/>
-              <img src="img/rust.png" alt="Rust Lang"/>
-              <img src="img/Python.png" alt="Python"/>
-            </div>
+        <div class="images">
+          <div class="ferris-wheel">
             <img class="personal-image" src="img/pi.jpg" alt=""/>
-          </div>
+              <div class="wheel">
+                  <div class="cabin cabin-1"><img src="img/Bash.png" alt="Cabin 1"/></div>
+                  <div class="cabin cabin-2"><img src="img/Tex.png" alt="Cabin 2"/></div>
+                  <div class="cabin cabin-3"><img src="img/nix.png" alt="Cabin 3"/></div>
+                  <div class="cabin cabin-4"><img src="img/leptos.png" alt="Cabin 4"/></div>
+                  <div class="cabin cabin-5"><img src="img/aya.svg" alt="Cabin 5"/></div>
+                  <div class="cabin cabin-6"><img src="img/C.png" alt="Cabin 6"/></div>
+                  <div class="cabin cabin-7"><img src="img/rust.png" alt="Cabin 7"/></div>
+                  <div class="cabin cabin-8"><img src="img/Python.png" alt="Cabin 8"/></div>
+              </div>
+          </div></div>
         </div>
         <div class="text">
           <div class="text-area">
