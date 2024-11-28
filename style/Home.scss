@@ -8,6 +8,65 @@
   margin-left: 4em;
 }
 
+@mixin cabins($radius) {
+  /* Position cabins at equal angles on the wheel */
+  .cabin-1 {
+    transform: translate(-50%, -50%) rotate(0deg) translateY($radius);
+    img {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+
+  .cabin-2 {
+    transform: translate(-50%, -50%) rotate(45deg) translateY($radius);
+    img {
+      background-color: white;
+      rotate: -45deg;
+    }
+  }
+
+  .cabin-3 {
+    transform: translate(-50%, -50%) rotate(90deg) translateY($radius);
+    img {
+      rotate: -90deg;
+    }
+  }
+
+  .cabin-4 {
+    transform: translate(-50%, -50%) rotate(135deg) translateY($radius);
+    img {
+      rotate: -135deg;
+    }
+  }
+
+  .cabin-5 {
+    transform: translate(-50%, -50%) rotate(180deg) translateY($radius);
+    img {
+      rotate: -180deg;
+    }
+  }
+
+  .cabin-6 {
+    transform: translate(-50%, -50%) rotate(225deg) translateY($radius);
+    img {
+      rotate: -225deg;
+    }
+  }
+
+  .cabin-7 {
+    transform: translate(-50%, -50%) rotate(270deg) translateY($radius);
+    img {
+      rotate: -270deg;
+    }
+  }
+
+  .cabin-8 {
+    transform: translate(-50%, -50%) rotate(315deg) translateY($radius);
+    img {
+      rotate: -315deg;
+    }
+  }
+}
 .home-page {
   display: flex;
   flex-direction: row;
@@ -24,7 +83,7 @@
     transition: all ease 1s;
 
     .text-area {
-      width: 100%;
+      width: 100%justify-self;
       margin: auto;
       display: flex;
       flex-direction: column;
@@ -76,13 +135,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 100% / 2.2;
+    // flex-basis: 100% / 2.2;
+    width: 30vh;
+    height: 30vh;
     transition: all ease 1s;
     margin: auto;
     .images {
       position: relative;
-      width: 30vh;
-      height: 30vh;
+      height: 100%;
+      widows: 100%;
       margin-top: 60px;
       align-content: center;
       justify-content: center;
@@ -93,79 +154,77 @@
         transform: translate(-50%, -50%);
         height: 18vw;
         width: 18vw;
-        border-radius: 4%;
+        border-radius: 50%;
         padding: 5px;
-        border: 0.5px solid $orang;
+        // border: 0.5px solid $orang;
         transition: all ease 1s;
       }
+      // ---------------------------------------------------------------
+      .ferris-wheel {
+        position: relative;
+        width: 40vw;
+        height: 40vw;
+        border-radius: 50%;
+        border: 1px solid $orang;
+        margin: auto;
+      }
+
       .wheel {
-        height: 100%;
+        position: relative;
         width: 100%;
-        animation: rotation 60s linear infinite;
-        img {
-          position: absolute;
-          height: 6.5vw;
-          widows: 6.5vw;
-          padding: 3px;
-          transform: translate(50%, -50%);
-          border-radius: 50%;
-          border: 0.1rem solid $orang;
-          background-color: $white;
-        }
-        img:nth-child(1) {
-          top: 68.66%;
-          right: 2%;
-        }
-        img:nth-child(2) {
-          top: 98%;
-          right: 27.43%;
-        }
+        height: 100%;
+        animation: rotateWheel 20s infinite linear;
+        display: flex;
+        //justify-content: center;
+        // align-items: center;
+      }
 
-        img:nth-child(3) {
-          top: 98%;
-          right: 68.66%;
-        }
+      .cabin {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center center;
+        display: flex;
+        //justify-content: center;
+        // align-items: center;
+      }
 
-        img:nth-child(4) {
-          top: 68.66%;
-          right: 98%;
-        }
+      .cabin img {
+        width: 6.5vw;
+        height: 6.5vw;
+        border-radius: 50%;
+        transform-origin: center center;
+        /* Counter-rotate the images to keep them upright */
+        animation: rotateImage 20s infinite linear;
+      }
 
-        img:nth-child(5) {
-          top: 27.34%;
-          right: 98%;
+      @include cabins(-20vw);
+
+      /* Animation for rotating the wheel */
+      @keyframes rotateWheel {
+        0% {
+          transform: rotate(0deg);
         }
-        /* C Lang */
-        img:nth-child(6) {
-          top: 2%;
-          right: 68.66%;
-        }
-        /* C++ Lang */
-        img:nth-child(7) {
-          top: 2%;
-          right: 27.34%;
-        }
-        /* Python */
-        img:nth-child(8) {
-          top: 27.34%;
-          right: 2%;
+        100% {
+          transform: rotate(360deg);
         }
       }
-      &:hover {
-        .personal-image {
-          padding: 10px;
+
+      /* Counter-rotation for the images to keep them upright */
+      @keyframes rotateImage {
+        0% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(0deg); /* Reverse rotation */
         }
       }
+
+      // ---------------------------------------------------------------
     }
-    @include ScaledHover;
   }
 }
 
-@keyframes rotation {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @include Query(mobile) {
   .home-page {
     .text {
@@ -194,21 +253,24 @@
       justify-content: center;
       align-items: center;
       margin: 6rem 0;
-
       .images {
-        margin-top: 6rem;
-        width: 70vw;
-        height: 70vw;
         .personal-image {
-          width: 35vw;
-          height: 35vw;
+          width: 30vw;
+          height: 30vw;
+        }
+        .ferris-wheel {
+          width: 60vw;
+          height: 60vw;
         }
         .wheel {
+          width: 60vw;
+          height: 60vw;
           img {
-            width: 12vw;
-            height: 12vw;
+            width: 10vw;
+            height: 10vw;
           }
         }
+        @include cabins(-30vw);
       }
     }
   }
@@ -235,18 +297,23 @@
       margin: 6rem 0;
 
       .images {
-        width: 70vw;
-        height: 70vw;
         .personal-image {
-          width: 35vw;
-          height: 35vw;
+          width: 30vw;
+          height: 30vw;
+        }
+        .ferris-wheel {
+          width: 60vw;
+          height: 60vw;
         }
         .wheel {
+          width: 60vw;
+          height: 60vw;
           img {
             width: 10vw;
             height: 10vw;
           }
         }
+        @include cabins(-30vw);
       }
     }
   }
@@ -272,20 +339,28 @@
       flex-basis: 80%;
       margin: 6rem 0;
       width: 80%;
+      height: 60%;
 
       .images {
         width: 70vw;
         height: 70vw;
         .personal-image {
-          width: 35vw;
-          height: 35vw;
+          width: 30vw;
+          height: 30vw;
+        }
+        .ferris-wheel {
+          width: 60vw;
+          height: 60vw;
         }
         .wheel {
+          width: 60vw;
+          height: 60vw;
           img {
             width: 10vw;
             height: 10vw;
           }
         }
+        @include cabins(-30vw);
       }
     }
   }
@@ -293,7 +368,6 @@
 @include Query(largScreen) {
   .home-page {
     .text {
-
       .text-area {
         width: 45vw;
         div {
