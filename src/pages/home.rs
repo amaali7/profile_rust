@@ -34,7 +34,7 @@ pub fn Home() -> Element {
                             }
                             div { class: "cabin cabin-4",
                                 img {
-                                    src: asset!("/images/leptos.png"),
+                                    src: asset!("/images/dioxus.png"),
                                     alt: "Cabin 4"
                                 }
                             }
