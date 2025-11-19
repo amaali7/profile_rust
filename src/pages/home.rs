@@ -68,7 +68,6 @@ pub fn Home() -> Element {
             }
             div { class: "text",
                 div { class: "text-area",
-                    h1 { "Summary" }
                     div {
                         "Backend and embedded systems engineer with strong expertise in Rust (Tokio, Axum), C/C++, Python, database building, and system infrastructure design and integration. Experienced in developing end-to-end IoT and backend architectures, including real-time data ingestion, analytics, and visualization. Skilled in API interfacing, Nix/NixOS, eBPF (Aya), SurrealDB, and embedded firmware development. Capable of designing reliable, high-performance systems that bridge hardware and software."                    }
                     a { href: "#info", "info" }
