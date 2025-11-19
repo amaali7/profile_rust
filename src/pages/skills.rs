@@ -40,7 +40,7 @@ pub fn Skills() -> Element {
             div { class: "conta",
                 h1 { class: "rounded-header", "Languages" }
                 h6 { class: "skill", "Native Arabic" }
-                h6 { class: "skill", "English" }
+                h6 { class: "skill", "Profissional English" }
             }
         }
     }
