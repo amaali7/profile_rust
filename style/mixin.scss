@@ -103,9 +103,9 @@ $yellow-one: #f0ed53;
     display: block;
   }
 }
-@mixin ScaledHover($scale: 1.15) {
+@mixin ScaledHover($scale: 1.05) {
   &:hover {
-    scale: 1.15;
+    scale: 1.05;
   }
 }
 
