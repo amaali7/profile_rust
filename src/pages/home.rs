@@ -22,7 +22,7 @@ pub fn Home() -> Element {
                             }
                             div { class: "cabin cabin-2",
                                 img {
-                                    src: asset!("/images/Tex.png"),
+                                    src: asset!("/images/tokio.png"),
                                     alt: "Cabin 2"
                                 }
                             }
