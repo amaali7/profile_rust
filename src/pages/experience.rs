@@ -3,9 +3,6 @@ use dioxus::prelude::*;
 /// Default Home Page
 #[component]
 pub fn Experience() -> Element {
-    // Note: The commented out model functionality from Leptos would need to be
-    // implemented separately in Dioxus using conditional rendering
-
     rsx! {
             section { id: "Experience", class: "page-section experience-page",
                 h1 { class: "rounded-header", style: "width: 300px", "Freelancer" }

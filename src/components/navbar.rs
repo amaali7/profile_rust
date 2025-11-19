@@ -53,7 +53,8 @@ pub fn NavBarLogo() -> Element {
         div { class: "current-part",
             div { class: "nav-logo",
                 a {
-                    href: "/",
+                    target: "_blank",
+                    href: "https://github.com/amaali7/profile_rust",
                     span { class: "span-1", "Profile" }
                     span { class: "span-5", "::" }
                     span { class: "span-4", "<" }
