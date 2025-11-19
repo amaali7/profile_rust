@@ -1,0 +1,29 @@
+[application]
+
+[web]
+watch = [
+    "images",
+    "style",
+]
+
+
+[web.app]
+
+# HTML title tag content
+title = "profile"
+out_dir = "docs"
+base_path = "profile_rust"
+# include `assets` in web platform
+[web.resource]
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []

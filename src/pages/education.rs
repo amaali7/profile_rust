@@ -1,155 +1,137 @@
+use dioxus::prelude::*;
+use dioxus_sdk::time::use_interval;
 use std::time::Duration;
-
-use leptos::*;
 
 /// Default Home Page
 #[component]
-pub fn Education() -> impl IntoView {
-    let (image, set_image) = create_signal(0);
+pub fn Education() -> Element {
+    let mut image = use_signal(|| 0);
     let images = [
-        "img/uofk-slide1.jpg",
-        "img/uofk-slide2.jpg",
-        "img/uofk-slide3.jpg",
+        asset!("images/uofk-slide1.jpg"),
+        asset!("images/uofk-slide2.jpg"),
+        asset!("images/uofk-slide3.jpg"),
     ];
-    create_effect(move |_| {
-        set_interval(
-            move || {
-                if image() == 2 {
-                    set_image(0);
-                } else {
-                    set_image(image() + 1);
-                }
-            },
-            Duration::from_secs(3),
-        );
+
+    // This hook will run the closure every 1 second
+    use_interval(Duration::from_secs(2), move |()| {
+        image.set((image() + 1) % images.len());
     });
-    view! {
-      <section id="Education" class="page-section education-page">
-        <div class="image-section">
-          <img
-            src=move || { format!("./{}", images[image.get()]) }
-            class="uofk-images"
-            alt="UofK  1"
-          />
-        </div>
-        <div class="text-section">
-          <h1>src/lib.rs</h1>
-          <div class="text">
-            <span class="span-1">struct</span>
-            Education
-            <span class="span-1">{"{"}</span>
-            <br/>
+    rsx! {
+        section { id: "Education", class: "page-section education-page",
+            div { class: "image-section",
+                img {
+                    src: images[image()],
+                    class: "uofk-images",
+                    alt: "UofK {image()}"
+                }
+            }
+            div { class: "text-section",
+                h1 { "src/lib.rs" }
+                div { class: "text",
+                    span { class: "span-1", "struct" }
+                    " Education"
+                    span { class: "span-1", "{{" }
+                    br {}
 
-            {}
-            <span class=" tab-1">institute</span>
-            <span class="span-4">:</span>
-            <span class="span-1">String</span>
-            <span class="span-4">,</span>
-            <br/>
+                    span { class: "tab-1", "institute" }
+                    span { class: "span-4", ":" }
+                    span { class: "span-1", "String" }
+                    span { class: "span-4", "," }
+                    br {}
 
-            {}
-            <span class=" tab-1">department</span>
-            <span class="span-4">:</span>
-            <span class="span-1">String</span>
-            <span class="span-4">,</span>
-            <br/>
+                    span { class: "tab-1", "department" }
+                    span { class: "span-4", ":" }
+                    span { class: "span-1", "String" }
+                    span { class: "span-4", "," }
+                    br {}
 
-            {}
-            <span class=" tab-1">degree</span>
-            <span class="span-4">:</span>
-            <span class="span-1">String</span>
-            <span class="span-4">,</span>
-            <br/>
+                    span { class: "tab-1", "degree" }
+                    span { class: "span-4", ":" }
+                    span { class: "span-1", "String" }
+                    span { class: "span-4", "," }
+                    br {}
 
-            {}
-            <span class=" tab-1">from</span>
-            <span class="span-4">:</span>
-            <span class="span-1">u16</span>
-            <span class="span-4">,</span>
-            <br/>
+                    span { class: "tab-1", "from" }
+                    span { class: "span-4", ":" }
+                    span { class: "span-1", "Date" }
+                    span { class: "span-4", "," }
+                    br {}
 
-            {}
-            <span class=" tab-1">till</span>
-            <span class="span-4">:</span>
-            <span class="span-1">u16</span>
-            <span class="span-4">,</span>
-            <br/>
+                    span { class: "tab-1", "till" }
+                    span { class: "span-4", ":" }
+                    span { class: "span-1", "Date" }
+                    span { class: "span-4", "," }
+                    br {}
 
-            <span class="span-1">{"}"}</span>
-            <span class="span-4">;</span>
-            <br/>
-            <br/>
-            <span class="span-1">impl</span>
-            Default
-            <span class="span-4">for</span>
-            Education
-            <span class="span-1">{"{"}</span>
-            <br/>
+                    span { class: "span-1", "}}" }
+                    span { class: "span-4", ";" }
+                    br {}
+                    br {}
 
-            {}
-            <span class="span-4 tab-1">fn</span>
-            <span class="span-1">" default"</span>
-            <span class="span-1">"() "</span>
-            <span class="span-4">"->"</span>
-            Self
-            <span class="span-1">"{"</span>
-            <br/>
+                    span { class: "span-1", "impl" }
+                    " Default"
+                    span { class: "span-4", " for " }
+                    "Education"
+                    span { class: "span-1", " {{" }
+                    br {}
 
-            <span class="tab-1">Self</span>
-            <span class="span-1">"{"</span>
-            <br/>
-            <span class="tab-2">institute</span>
-            <span class="span-4">" : "</span>
-            <span class="span-4">"\""</span>
-            <span class="span-4">"UOfK"</span>
-            <span class="span-4">"\""</span>
-            <span class="span-4">"."</span>
-            <span class="span-3">"to_owned"</span>
-            <span class="span-1">"()"</span>
-            <span class="span-4">,</span>
+                    span { class: "span-4 tab-1", "fn" }
+                    span { class: "span-1", " default() " }
+                    span { class: "span-4", "-> " }
+                    "Self"
+                    span { class: "span-1", " {{" }
+                    br {}
 
-            <br/>
-            <span class="tab-2">department</span>
-            <span class="span-4">" : "</span>
-            <span class="span-4">"\""</span>
-            <span class="span-4">"Physics"</span>
-            <span class="span-4">"\""</span>
-            <span class="span-4">"."</span>
-            <span class="span-3">"to_owned"</span>
-            <span class="span-1">"()"</span>
-            <span class="span-4">,</span>
-            <br/>
-            <span class="tab-2">degree</span>
-            <span class="span-4">" : "</span>
-            <span class="span-4">"\""</span>
-            <span class="span-4">"B.Sc (Honors)"</span>
-            <span class="span-4">"\""</span>
-            <span class="span-4">"."</span>
-            <span class="span-3">"to_owned"</span>
-            <span class="span-1">"()"</span>
-            <span class="span-4">,</span>
-            <br/>
-            <span class="tab-2">from</span>
-            <span class="span-4">" : "</span>
-            <span class="span-5">2017</span>
-            <span class="span-4">,</span>
-            <br/>
-            <span class="tab-2">till</span>
-            <span class="span-4">" : "</span>
-            <span class="span-5">2017</span>
-            <span class="span-4">,</span>
-            <br/>
-            <span class="span-1 tab-2">"}"</span>
+                    span { class: "tab-1", "Self" }
+                    span { class: "span-1", " {{" }
+                    br {}
 
-            <br/>
+                    span { class: "tab-2", "institute" }
+                    span { class: "span-4", " : " }
+                    span { class: "span-4", "\"UOfK\"" }
+                    span { class: "span-4", "." }
+                    span { class: "span-3", "to_owned" }
+                    span { class: "span-1", "()" }
+                    span { class: "span-4", "," }
+                    br {}
 
-            {}
+                    span { class: "tab-2", "department" }
+                    span { class: "span-4", " : " }
+                    span { class: "span-4", "\"Physics\"" }
+                    span { class: "span-4", "." }
+                    span { class: "span-3", "to_owned" }
+                    span { class: "span-1", "()" }
+                    span { class: "span-4", "," }
+                    br {}
 
-            <span class="span-1 tab-1">{"}"}</span>
-            <br/>
-            <span class="span-1">{"}"}</span>
-          </div>
-        </div>
-      </section>
+                    span { class: "tab-2", "degree" }
+                    span { class: "span-4", " : " }
+                    span { class: "span-4", "\"B.Sc (Honors)\"" }
+                    span { class: "span-4", "." }
+                    span { class: "span-3", "to_owned" }
+                    span { class: "span-1", "()" }
+                    span { class: "span-4", "," }
+                    br {}
+
+                    span { class: "tab-2", "from" }
+                    span { class: "span-4", " : " }
+                    span { class: "span-5", "Oct 2017" }
+                    span { class: "span-4", "," }
+                    br {}
+
+                    span { class: "tab-2", "till" }
+                    span { class: "span-4", " : " }
+                    span { class: "span-5", "Dec 2017" }
+                    span { class: "span-4", "," }
+                    br {}
+
+                    span { class: "span-1 tab-2", "}}" }
+                    br {}
+                    span { class: "span-1 tab-1", "}}" }
+                    br {}
+                    span { class: "span-1", "}}" }
+                }
+            }
+        }
     }
 }

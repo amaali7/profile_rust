@@ -90,7 +90,7 @@
       justify-content: space-between;
       align-items: center;
       border: 0.5px solid $orang;
-      /* border-radius: 16px; */
+      // border-radius: 16px;
       h1 {
         color: $orang;
         text-align: center;
@@ -101,10 +101,10 @@
         font-size: 1.2rem;
       }
       div {
-        font-size: 1.2rem;
-        color: $white;
-        padding-top: 42px;
-        tab-size: 4;
+        font-size: 0.5rem;
+        color: $orang;
+        padding:  40px;
+        // tab-size: 4;
       }
       @include CodeSchema;
       a {
