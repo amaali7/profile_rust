@@ -6,7 +6,7 @@ pub fn Skills() -> Element {
     rsx! {
         section { id: "Skills", class: "page-section skills-page",
             div { class: "conta",
-                h1 { class: "rounded-header", "Programing" }
+                h1 { class: "rounded-header", "Programming" }
                 h6 { class: "skill", "Rust" }
                 h6 { class: "skill", "C/C++ Language" }
                 h6 { class: "skill", "Nix/NixOS" }
