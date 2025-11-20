@@ -1,6 +1,7 @@
 @include RoundedHeader;
 @include Typography;
 .info-page {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
