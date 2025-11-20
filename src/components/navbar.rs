@@ -55,12 +55,16 @@ pub fn NavBarLogo() -> Element {
                 a {
                     target: "_blank",
                     href: "https://github.com/amaali7/profile_rust",
+                    span { class: "span-2", "let " }
+                    span { class: "span-1", "p" }
+                    span { class: "span-2", " = " }
                     span { class: "span-1", "Profile" }
                     span { class: "span-5", "::" }
                     span { class: "span-4", "<" }
                     span { class: "span-1", "Me" }
                     span { class: "span-4", ">" }
                     span { class: "span-1", "()" }
+                    span { class: "span-2", ";" }
                 }
             }
         }

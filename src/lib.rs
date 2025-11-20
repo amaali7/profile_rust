@@ -30,29 +30,29 @@ pub fn App() -> Element {
                 NavBar {
                     check: botton_h,
                     NavBarItem {
-                        text: ".home()".to_owned(),
+                        text: "p.home()".to_owned(),
                         link: "#Home".to_owned(),
                         check: botton_h
                     }
                     NavBarItem {
-                        text: ".skills()".to_owned(),
+                        text: "p.skills()".to_owned(),
                         link: "#Skills".to_owned(),
                         check: botton_h
                     }
                     NavBarItem {
-                        text: ".experience()".to_owned(),
+                        text: "p.experience()".to_owned(),
                         link: "#Experience".to_owned(),
                         check: botton_h
                     }
 
                     NavBarItem {
-                        text: ".education()".to_owned(),
+                        text: "p.education()".to_owned(),
                         link: "#Education".to_owned(),
                         check: botton_h
                     }
 
                     NavBarItem {
-                        text: ".info()".to_owned(),
+                        text: "p.info()".to_owned(),
                         link: "#Info".to_owned(),
                         check: botton_h
                     }
