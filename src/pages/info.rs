@@ -141,28 +141,6 @@ pub fn Info() -> Element {
                         class: "contact-link",
                         "LinkedIn"
                     }
-                    a {
-                        href: "https://www.facebook.com/amaali17/",
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        class: "contact-link",
-                        "Facebook"
-                    }
-                    a {
-                        href: "https://twitter.com/Amaali_7",
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        class: "contact-link",
-                        "Twitter"
-                    }
-                    // Note: The Telegram link is commented out in the original
-                    // a {
-                    //     href: "https://t.me/Amaali7",
-                    //     target: "_blank",
-                    //     rel: "noopener noreferrer",
-                    //     class: "contact-link",
-                    //     "Telegram"
-                    // }
                 }
             }
         }
